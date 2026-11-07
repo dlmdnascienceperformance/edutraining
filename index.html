@@ -1,5 +1,13 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Plan Noviembre">
 <title>Entrenamiento · Noviembre · Dashboard</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
 <style>
@@ -115,4 +123,5 @@ document.addEventListener('change',e=>{const t=e.target,a=t.dataset.a;if(a=='ck'
 document.addEventListener('input',e=>{const t=e.target,f=t.dataset.f;if(!f)return;const l=lg(S.d);if(f=='kg'||f=='rp')l[f][t.dataset.k]=t.value;else if(f=='rpe'){l.rpe=+t.value;$('#rv').textContent=t.value}else l.nt=t.value;sv()});
 document.addEventListener('keydown',e=>{if(e.key=='Escape')$('#mod').classList.remove('on');if((e.key=='Enter'||e.key==' ')&&e.target.matches('[role=button]')){e.preventDefault();e.target.click()}});
 render();
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script></body></html>
